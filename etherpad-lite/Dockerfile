@@ -23,6 +23,19 @@ COPY entrypoint.sh /entrypoint.sh
 VOLUME /opt/etherpad-lite/var
 RUN ln -s var/settings.json settings.json
 
+RUN npm install \
+    ep_ether-o-meter \
+    ep_timesliderdiff \
+    ep_page_view \
+    ep_disable_reset_authorship_colours \
+    ep_print \
+    ep_font_size \
+    ep_font_color \
+    ep_font_family \
+    ep_sketchspace \
+    ep_set_title_on_pad \
+    ep_mypads
+
 EXPOSE 9001
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bin/run.sh", "--root"]
