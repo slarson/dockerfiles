@@ -58,6 +58,38 @@ if [ ! -f settings.json ]; then
 			    "password": "${ETHERPAD_DB_PASSWORD}",
 			    "database": "${ETHERPAD_DB_NAME}"
 			  },
+	    "ssl" : {
+            "key"  : "/opt/etherpad-lite/epl-server.key",
+            "cert" : "/opt/etherpad-lite/epl-server.crt"
+                     },
+            "toolbar": {
+		 "left": [
+		   ["bold", "italic", "underline", "strikethrough"],
+		    ["orderedlist", "unorderedlist", "indent", "outdent"],
+		     ["undo", "redo"],
+		    ],
+		    "right": [
+		      ["importexport", "timeslider", "savedrevision"],
+		      ["settings", "embed"],
+		      ["showusers"]
+		    ],
+		    "timeslider": [
+		      ["timeslider_export", "timeslider_returnToPad"]
+		   ]
+		  },
+	    "padOptions": {
+		 "noColors": false,
+		  "showControls": true,
+		  "showChat": false,
+		  "showLineNumbers": true,
+		  "useMonospaceFont": false,
+		  "userName": false,
+		  "userColor": false,
+		  "rtl": false,
+		  "alwaysShowChat": true,
+		  "chatAndUsers": true,
+		  "lang": "en-gb"
+		 },
 	EOF
 
 	if [ $ETHERPAD_ADMIN_PASSWORD ]; then
